@@ -1,0 +1,5 @@
+venv
+__pycache__
+voters/*
+voters/__pycache__/*
+eigenface_model.xml
