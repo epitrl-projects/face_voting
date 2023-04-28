@@ -108,6 +108,17 @@ face_recognizer.write('eigenface_model.xml')
 face_recognizer.read('./eigenface_model.xml')
 
 
+
+
+pca_model = cv2.face.LBPHFaceRecognizer_create()
+pca_model.train(images, labels)
+pca_model.write('LBPH_model.xml')
+
+pca_model.read('LBPH_model.xml')
+
+
+
+
 # Print training output
 for i in range(len(images)):
     label, confidence = face_recognizer.predict(images[i])
@@ -131,10 +142,6 @@ cap = cv2.VideoCapture(0)
 
 confirmstate = "nan"
 confirmstatenum = 0
-
-
-            
-            
 
 
 while True:
